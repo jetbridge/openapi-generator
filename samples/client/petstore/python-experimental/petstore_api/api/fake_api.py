@@ -30,13 +30,13 @@ from petstore_api.model_utils import (  # noqa: F401
     str,
     validate_and_convert_types
 )
-from petstore_api.model import xml_item
-from petstore_api.model import outer_composite
-from petstore_api.model import outer_enum
-from petstore_api.model import outer_number
-from petstore_api.model import file_schema_test_class
-from petstore_api.model import user
-from petstore_api.model import client
+from petstore_api.model.client import Client
+from petstore_api.model.file_schema_test_class import FileSchemaTestClass
+from petstore_api.model.outer_composite import OuterComposite
+from petstore_api.model.outer_enum import OuterEnum
+from petstore_api.model.outer_number import OuterNumber
+from petstore_api.model.user import User
+from petstore_api.model.xml_item import XmlItem
 
 
 class FakeApi(object):
@@ -66,7 +66,7 @@ class FakeApi(object):
             >>> result = thread.get()
 
             Args:
-                xml_item (xml_item.XmlItem): XmlItem Body
+                xml_item (XmlItem): XmlItem Body
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -147,7 +147,7 @@ class FakeApi(object):
                 },
                 'openapi_types': {
                     'xml_item':
-                        (xml_item.XmlItem,),
+                        (XmlItem,),
                 },
                 'attribute_map': {
                 },
@@ -297,7 +297,7 @@ class FakeApi(object):
 
 
             Keyword Args:
-                body (outer_composite.OuterComposite): Input composite as post body. [optional]
+                body (OuterComposite): Input composite as post body. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -319,7 +319,7 @@ class FakeApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                outer_composite.OuterComposite
+                OuterComposite
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -346,7 +346,7 @@ class FakeApi(object):
 
         self.fake_outer_composite_serialize = Endpoint(
             settings={
-                'response_type': (outer_composite.OuterComposite,),
+                'response_type': (OuterComposite,),
                 'auth': [],
                 'endpoint_path': '/fake/outer/composite',
                 'operation_id': 'fake_outer_composite_serialize',
@@ -372,7 +372,7 @@ class FakeApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (outer_composite.OuterComposite,),
+                        (OuterComposite,),
                 },
                 'attribute_map': {
                 },
@@ -407,7 +407,7 @@ class FakeApi(object):
 
 
             Keyword Args:
-                body (outer_enum.OuterEnum): Input enum as post body. [optional]
+                body (OuterEnum): Input enum as post body. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -429,7 +429,7 @@ class FakeApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                outer_enum.OuterEnum
+                OuterEnum
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -456,7 +456,7 @@ class FakeApi(object):
 
         self.fake_outer_enum_serialize = Endpoint(
             settings={
-                'response_type': (outer_enum.OuterEnum,),
+                'response_type': (OuterEnum,),
                 'auth': [],
                 'endpoint_path': '/fake/outer/enum',
                 'operation_id': 'fake_outer_enum_serialize',
@@ -482,7 +482,7 @@ class FakeApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (outer_enum.OuterEnum,),
+                        (OuterEnum,),
                 },
                 'attribute_map': {
                 },
@@ -517,7 +517,7 @@ class FakeApi(object):
 
 
             Keyword Args:
-                body (outer_number.OuterNumber): Input number as post body. [optional]
+                body (OuterNumber): Input number as post body. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -539,7 +539,7 @@ class FakeApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                outer_number.OuterNumber
+                OuterNumber
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -566,7 +566,7 @@ class FakeApi(object):
 
         self.fake_outer_number_serialize = Endpoint(
             settings={
-                'response_type': (outer_number.OuterNumber,),
+                'response_type': (OuterNumber,),
                 'auth': [],
                 'endpoint_path': '/fake/outer/number',
                 'operation_id': 'fake_outer_number_serialize',
@@ -592,7 +592,7 @@ class FakeApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (outer_number.OuterNumber,),
+                        (OuterNumber,),
                 },
                 'attribute_map': {
                 },
@@ -737,7 +737,7 @@ class FakeApi(object):
             >>> result = thread.get()
 
             Args:
-                body (file_schema_test_class.FileSchemaTestClass):
+                body (FileSchemaTestClass):
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -818,7 +818,7 @@ class FakeApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (file_schema_test_class.FileSchemaTestClass,),
+                        (FileSchemaTestClass,),
                 },
                 'attribute_map': {
                 },
@@ -854,7 +854,7 @@ class FakeApi(object):
 
             Args:
                 query (str):
-                body (user.User):
+                body (User):
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -941,7 +941,7 @@ class FakeApi(object):
                     'query':
                         (str,),
                     'body':
-                        (user.User,),
+                        (User,),
                 },
                 'attribute_map': {
                     'query': 'query',
@@ -978,7 +978,7 @@ class FakeApi(object):
             >>> result = thread.get()
 
             Args:
-                body (client.Client): client model
+                body (Client): client model
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -1002,7 +1002,7 @@ class FakeApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                client.Client
+                Client
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1031,7 +1031,7 @@ class FakeApi(object):
 
         self.test_client_model = Endpoint(
             settings={
-                'response_type': (client.Client,),
+                'response_type': (Client,),
                 'auth': [],
                 'endpoint_path': '/fake',
                 'operation_id': 'test_client_model',
@@ -1059,7 +1059,7 @@ class FakeApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (client.Client,),
+                        (Client,),
                 },
                 'attribute_map': {
                 },

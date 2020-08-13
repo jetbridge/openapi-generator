@@ -1,4 +1,4 @@
-# outer_composite.OuterComposite
+# OuterComposite
 
 ## Properties
 Name | Type | Description | Notes

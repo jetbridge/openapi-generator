@@ -28,7 +28,7 @@ from __future__ import print_function
 import time
 import petstore_api
 from petstore_api.api import pet_api
-from petstore_api.model import pet
+from petstore_api.model.pet import Pet
 from pprint import pprint
 # Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
@@ -51,7 +51,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pet_api.PetApi(api_client)
-    body = pet.Pet() # pet.Pet | Pet object that needs to be added to the store
+    body = Pet() # Pet | Pet object that needs to be added to the store
     
     # example passing only required values which don't have defaults set
     try:
@@ -65,7 +65,7 @@ with petstore_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**pet.Pet**](Pet.md)| Pet object that needs to be added to the store |
+ **body** | [**Pet**](Pet.md)| Pet object that needs to be added to the store |
 
 ### Return type
 
@@ -171,7 +171,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **find_pets_by_status**
-> [pet.Pet] find_pets_by_status(status)
+> [Pet] find_pets_by_status(status)
 
 Finds Pets by status
 
@@ -185,7 +185,7 @@ from __future__ import print_function
 import time
 import petstore_api
 from petstore_api.api import pet_api
-from petstore_api.model import pet
+from petstore_api.model.pet import Pet
 from pprint import pprint
 # Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[pet.Pet]**](Pet.md)
+[**[Pet]**](Pet.md)
 
 ### Authorization
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **find_pets_by_tags**
-> [pet.Pet] find_pets_by_tags(tags)
+> [Pet] find_pets_by_tags(tags)
 
 Finds Pets by tags
 
@@ -261,7 +261,7 @@ from __future__ import print_function
 import time
 import petstore_api
 from petstore_api.api import pet_api
-from petstore_api.model import pet
+from petstore_api.model.pet import Pet
 from pprint import pprint
 # Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[pet.Pet]**](Pet.md)
+[**[Pet]**](Pet.md)
 
 ### Authorization
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_pet_by_id**
-> pet.Pet get_pet_by_id(pet_id)
+> Pet get_pet_by_id(pet_id)
 
 Find pet by ID
 
@@ -337,7 +337,7 @@ from __future__ import print_function
 import time
 import petstore_api
 from petstore_api.api import pet_api
-from petstore_api.model import pet
+from petstore_api.model.pet import Pet
 from pprint import pprint
 # Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**pet.Pet**](Pet.md)
+[**Pet**](Pet.md)
 
 ### Authorization
 
@@ -416,7 +416,7 @@ from __future__ import print_function
 import time
 import petstore_api
 from petstore_api.api import pet_api
-from petstore_api.model import pet
+from petstore_api.model.pet import Pet
 from pprint import pprint
 # Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
@@ -439,7 +439,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pet_api.PetApi(api_client)
-    body = pet.Pet() # pet.Pet | Pet object that needs to be added to the store
+    body = Pet() # Pet | Pet object that needs to be added to the store
     
     # example passing only required values which don't have defaults set
     try:
@@ -453,7 +453,7 @@ with petstore_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**pet.Pet**](Pet.md)| Pet object that needs to be added to the store |
+ **body** | [**Pet**](Pet.md)| Pet object that needs to be added to the store |
 
 ### Return type
 
@@ -562,7 +562,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file**
-> api_response.ApiResponse upload_file(pet_id)
+> ApiResponse upload_file(pet_id)
 
 uploads an image
 
@@ -574,7 +574,7 @@ from __future__ import print_function
 import time
 import petstore_api
 from petstore_api.api import pet_api
-from petstore_api.model import api_response
+from petstore_api.model.api_response import ApiResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**api_response.ApiResponse**](ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
@@ -650,7 +650,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file_with_required_file**
-> api_response.ApiResponse upload_file_with_required_file(pet_id, required_file)
+> ApiResponse upload_file_with_required_file(pet_id, required_file)
 
 uploads an image (required)
 
@@ -662,7 +662,7 @@ from __future__ import print_function
 import time
 import petstore_api
 from petstore_api.api import pet_api
-from petstore_api.model import api_response
+from petstore_api.model.api_response import ApiResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
@@ -717,7 +717,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**api_response.ApiResponse**](ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 

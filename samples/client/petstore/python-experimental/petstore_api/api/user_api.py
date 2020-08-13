@@ -30,7 +30,7 @@ from petstore_api.model_utils import (  # noqa: F401
     str,
     validate_and_convert_types
 )
-from petstore_api.model import user
+from petstore_api.model.user import User
 
 
 class UserApi(object):
@@ -60,7 +60,7 @@ class UserApi(object):
             >>> result = thread.get()
 
             Args:
-                body (user.User): Created user object
+                body (User): Created user object
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -141,7 +141,7 @@ class UserApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (user.User,),
+                        (User,),
                 },
                 'attribute_map': {
                 },
@@ -173,7 +173,7 @@ class UserApi(object):
             >>> result = thread.get()
 
             Args:
-                body ([user.User]): List of user object
+                body ([User]): List of user object
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -254,7 +254,7 @@ class UserApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        ([user.User],),
+                        ([User],),
                 },
                 'attribute_map': {
                 },
@@ -286,7 +286,7 @@ class UserApi(object):
             >>> result = thread.get()
 
             Args:
-                body ([user.User]): List of user object
+                body ([User]): List of user object
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -367,7 +367,7 @@ class UserApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        ([user.User],),
+                        ([User],),
                 },
                 'attribute_map': {
                 },
@@ -538,7 +538,7 @@ class UserApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user.User
+                User
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -567,7 +567,7 @@ class UserApi(object):
 
         self.get_user_by_name = Endpoint(
             settings={
-                'response_type': (user.User,),
+                'response_type': (User,),
                 'auth': [],
                 'endpoint_path': '/user/{username}',
                 'operation_id': 'get_user_by_name',
@@ -863,7 +863,7 @@ class UserApi(object):
 
             Args:
                 username (str): name that need to be deleted
-                body (user.User): Updated user object
+                body (User): Updated user object
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -950,7 +950,7 @@ class UserApi(object):
                     'username':
                         (str,),
                     'body':
-                        (user.User,),
+                        (User,),
                 },
                 'attribute_map': {
                     'username': 'username',

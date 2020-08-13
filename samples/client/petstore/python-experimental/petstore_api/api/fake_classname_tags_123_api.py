@@ -30,7 +30,7 @@ from petstore_api.model_utils import (  # noqa: F401
     str,
     validate_and_convert_types
 )
-from petstore_api.model import client
+from petstore_api.model.client import Client
 
 
 class FakeClassnameTags123Api(object):
@@ -60,7 +60,7 @@ class FakeClassnameTags123Api(object):
             >>> result = thread.get()
 
             Args:
-                body (client.Client): client model
+                body (Client): client model
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -84,7 +84,7 @@ class FakeClassnameTags123Api(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                client.Client
+                Client
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -113,7 +113,7 @@ class FakeClassnameTags123Api(object):
 
         self.test_classname = Endpoint(
             settings={
-                'response_type': (client.Client,),
+                'response_type': (Client,),
                 'auth': [
                     'api_key_query'
                 ],
@@ -143,7 +143,7 @@ class FakeClassnameTags123Api(object):
                 },
                 'openapi_types': {
                     'body':
-                        (client.Client,),
+                        (Client,),
                 },
                 'attribute_map': {
                 },

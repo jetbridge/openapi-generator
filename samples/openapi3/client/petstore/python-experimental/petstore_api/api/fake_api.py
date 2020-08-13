@@ -30,13 +30,13 @@ from petstore_api.model_utils import (  # noqa: F401
     str,
     validate_and_convert_types
 )
-from petstore_api.model import health_check_result
-from petstore_api.model import outer_composite
-from petstore_api.model import additional_properties_with_array_of_enums
-from petstore_api.model import array_of_enums
-from petstore_api.model import file_schema_test_class
-from petstore_api.model import user
-from petstore_api.model import client
+from petstore_api.model.additional_properties_with_array_of_enums import AdditionalPropertiesWithArrayOfEnums
+from petstore_api.model.array_of_enums import ArrayOfEnums
+from petstore_api.model.client import Client
+from petstore_api.model.file_schema_test_class import FileSchemaTestClass
+from petstore_api.model.health_check_result import HealthCheckResult
+from petstore_api.model.outer_composite import OuterComposite
+from petstore_api.model.user import User
 
 
 class FakeApi(object):
@@ -86,7 +86,7 @@ class FakeApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                health_check_result.HealthCheckResult
+                HealthCheckResult
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -113,7 +113,7 @@ class FakeApi(object):
 
         self.fake_health_get = Endpoint(
             settings={
-                'response_type': (health_check_result.HealthCheckResult,),
+                'response_type': (HealthCheckResult,),
                 'auth': [],
                 'endpoint_path': '/fake/health',
                 'operation_id': 'fake_health_get',
@@ -282,7 +282,7 @@ class FakeApi(object):
 
 
             Keyword Args:
-                outer_composite_outer_composite (outer_composite.OuterComposite): Input composite as post body. [optional]
+                outer_composite (OuterComposite): Input composite as post body. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -304,7 +304,7 @@ class FakeApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                outer_composite.OuterComposite
+                OuterComposite
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -331,7 +331,7 @@ class FakeApi(object):
 
         self.fake_outer_composite_serialize = Endpoint(
             settings={
-                'response_type': (outer_composite.OuterComposite,),
+                'response_type': (OuterComposite,),
                 'auth': [],
                 'endpoint_path': '/fake/outer/composite',
                 'operation_id': 'fake_outer_composite_serialize',
@@ -340,7 +340,7 @@ class FakeApi(object):
             },
             params_map={
                 'all': [
-                    'outer_composite_outer_composite',
+                    'outer_composite',
                 ],
                 'required': [],
                 'nullable': [
@@ -356,13 +356,13 @@ class FakeApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'outer_composite_outer_composite':
-                        (outer_composite.OuterComposite,),
+                    'outer_composite':
+                        (OuterComposite,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'outer_composite_outer_composite': 'body',
+                    'outer_composite': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -638,7 +638,7 @@ class FakeApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                additional_properties_with_array_of_enums.AdditionalPropertiesWithArrayOfEnums
+                AdditionalPropertiesWithArrayOfEnums
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -665,7 +665,7 @@ class FakeApi(object):
 
         self.get_additional_properties_with_array_of_enums = Endpoint(
             settings={
-                'response_type': (additional_properties_with_array_of_enums.AdditionalPropertiesWithArrayOfEnums,),
+                'response_type': (AdditionalPropertiesWithArrayOfEnums,),
                 'auth': [],
                 'endpoint_path': '/fake/additional-properties-with-array-of-enums',
                 'operation_id': 'get_additional_properties_with_array_of_enums',
@@ -742,7 +742,7 @@ class FakeApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                array_of_enums.ArrayOfEnums
+                ArrayOfEnums
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -769,7 +769,7 @@ class FakeApi(object):
 
         self.get_array_of_enums = Endpoint(
             settings={
-                'response_type': (array_of_enums.ArrayOfEnums,),
+                'response_type': (ArrayOfEnums,),
                 'auth': [],
                 'endpoint_path': '/fake/array-of-enums',
                 'operation_id': 'get_array_of_enums',
@@ -813,7 +813,7 @@ class FakeApi(object):
 
         def __test_body_with_file_schema(
             self,
-            file_schema_test_class_file_schema_test_class,
+            file_schema_test_class,
             **kwargs
         ):
             """test_body_with_file_schema  # noqa: E501
@@ -822,11 +822,11 @@ class FakeApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.test_body_with_file_schema(file_schema_test_class_file_schema_test_class, async_req=True)
+            >>> thread = api.test_body_with_file_schema(file_schema_test_class, async_req=True)
             >>> result = thread.get()
 
             Args:
-                file_schema_test_class_file_schema_test_class (file_schema_test_class.FileSchemaTestClass):
+                file_schema_test_class (FileSchemaTestClass):
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -873,8 +873,8 @@ class FakeApi(object):
                 '_check_return_type', True
             )
             kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['file_schema_test_class_file_schema_test_class'] = \
-                file_schema_test_class_file_schema_test_class
+            kwargs['file_schema_test_class'] = \
+                file_schema_test_class
             return self.call_with_http_info(**kwargs)
 
         self.test_body_with_file_schema = Endpoint(
@@ -888,10 +888,10 @@ class FakeApi(object):
             },
             params_map={
                 'all': [
-                    'file_schema_test_class_file_schema_test_class',
+                    'file_schema_test_class',
                 ],
                 'required': [
-                    'file_schema_test_class_file_schema_test_class',
+                    'file_schema_test_class',
                 ],
                 'nullable': [
                 ],
@@ -906,13 +906,13 @@ class FakeApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'file_schema_test_class_file_schema_test_class':
-                        (file_schema_test_class.FileSchemaTestClass,),
+                    'file_schema_test_class':
+                        (FileSchemaTestClass,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'file_schema_test_class_file_schema_test_class': 'body',
+                    'file_schema_test_class': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -930,7 +930,7 @@ class FakeApi(object):
         def __test_body_with_query_params(
             self,
             query,
-            user_user,
+            user,
             **kwargs
         ):
             """test_body_with_query_params  # noqa: E501
@@ -938,12 +938,12 @@ class FakeApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.test_body_with_query_params(query, user_user, async_req=True)
+            >>> thread = api.test_body_with_query_params(query, user, async_req=True)
             >>> result = thread.get()
 
             Args:
                 query (str):
-                user_user (user.User):
+                user (User):
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -992,8 +992,8 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['query'] = \
                 query
-            kwargs['user_user'] = \
-                user_user
+            kwargs['user'] = \
+                user
             return self.call_with_http_info(**kwargs)
 
         self.test_body_with_query_params = Endpoint(
@@ -1008,11 +1008,11 @@ class FakeApi(object):
             params_map={
                 'all': [
                     'query',
-                    'user_user',
+                    'user',
                 ],
                 'required': [
                     'query',
-                    'user_user',
+                    'user',
                 ],
                 'nullable': [
                 ],
@@ -1029,15 +1029,15 @@ class FakeApi(object):
                 'openapi_types': {
                     'query':
                         (str,),
-                    'user_user':
-                        (user.User,),
+                    'user':
+                        (User,),
                 },
                 'attribute_map': {
                     'query': 'query',
                 },
                 'location_map': {
                     'query': 'query',
-                    'user_user': 'body',
+                    'user': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1054,7 +1054,7 @@ class FakeApi(object):
 
         def __test_client_model(
             self,
-            client_client,
+            client,
             **kwargs
         ):
             """To test \"client\" model  # noqa: E501
@@ -1063,11 +1063,11 @@ class FakeApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.test_client_model(client_client, async_req=True)
+            >>> thread = api.test_client_model(client, async_req=True)
             >>> result = thread.get()
 
             Args:
-                client_client (client.Client): client model
+                client (Client): client model
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -1091,7 +1091,7 @@ class FakeApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                client.Client
+                Client
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1114,13 +1114,13 @@ class FakeApi(object):
                 '_check_return_type', True
             )
             kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['client_client'] = \
-                client_client
+            kwargs['client'] = \
+                client
             return self.call_with_http_info(**kwargs)
 
         self.test_client_model = Endpoint(
             settings={
-                'response_type': (client.Client,),
+                'response_type': (Client,),
                 'auth': [],
                 'endpoint_path': '/fake',
                 'operation_id': 'test_client_model',
@@ -1129,10 +1129,10 @@ class FakeApi(object):
             },
             params_map={
                 'all': [
-                    'client_client',
+                    'client',
                 ],
                 'required': [
-                    'client_client',
+                    'client',
                 ],
                 'nullable': [
                 ],
@@ -1147,13 +1147,13 @@ class FakeApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'client_client':
-                        (client.Client,),
+                    'client':
+                        (Client,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'client_client': 'body',
+                    'client': 'body',
                 },
                 'collection_format_map': {
                 }
